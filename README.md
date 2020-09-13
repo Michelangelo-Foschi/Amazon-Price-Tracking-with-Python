@@ -1,5 +1,3 @@
-## **[![Michelangelo's github stats](https://github-readme-stats.vercel.app/api?username=Michelangelo-Foschi)](https://github.com/anuraghazra/github-readme-stats)**
-
 
 # Amazon-Price-Tracking-with-Python
 
