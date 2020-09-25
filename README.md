@@ -25,9 +25,10 @@ import smtplib
 - "smtplib" is needed to give us the function to send emails.
 
 ## **Code Setup:**
-- Code: URL = ‘Your item’s URL’
-- Code: headers = {“User-Agent”: ‘Your User-Agent’}
-
+``` python
+URL = ‘Your item’s URL’
+headers = {“User-Agent”: ‘Your User-Agent’}
+```
 ## **Check Price function:**
   - Things that could be different in your case:
     - The title id -> To look up your title id go on your amazon item’s URL and highlight the title. Then right-click and open the “inspect element” function. Once                    the inspector is opened you will get a line of code highlighted. Search for the keyword “id” and copy your item’s id. In my case, the id is “productTitle”.
@@ -39,10 +40,11 @@ import smtplib
 Now we have our generated password.
 
 ## **Call Our Function:**
-- Code: check_price()
-
+``` python
+check_price()
+```
 ## **Code Recap:**
-- Notice: You could be also willing to change your preferred price number, instead of 330.0. & maybe you would also want to change the converted_price, instead of [3:7].
+- Notice: You could be also willing to change your preferred price number, instead of 330.0. & maybe you would also want to change the converted_price, instead of "[3:7].
 
 # **END:**
 - Hopefully this tutorial helped you in solving this tricky, but important problem. As this is my first story I publish, I would like to hear from you what you think about this publishing.
