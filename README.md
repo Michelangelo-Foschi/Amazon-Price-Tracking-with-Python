@@ -30,10 +30,27 @@ URL = ‘Your item’s URL’
 headers = {“User-Agent”: ‘Your User-Agent’}
 ```
 ## **Check Price function:**
+``` python
+def check_price():
+
+    page = requests.get(URL, headers=headers) #returns data from website
+
+    soup = BeautifulSoup(page.content, 'html.parser')
+
+
+    title = soup.find(id="productTitle").get_text()
+    price = soup.find(id="priceblock_ourprice").get_text()
+    converted_price = float(price[3:7])
+
+    if(converted_price < YOUR PREFERRED PRICE):
+        send_mail()
+
+    print(title.strip())
+    print(converted_price)
+```
   - Things that could be different in your case:
     - The title id -> To look up your title id go on your amazon item’s URL and highlight the title. Then right-click and open the “inspect element” function. Once                    the inspector is opened you will get a line of code highlighted. Search for the keyword “id” and copy your item’s id. In my case, the id is “productTitle”.
     - The price id -> To look up your price id go on your amazon item’s URL and highlight the title. Then right-click and open the “inspect element” function. Once the inspector is opened you will get a line of code highlighted. Search for the keyword “id” and copy your item’s id. In my case, the id is “price block_ourprice”.
-
 
 ## **Send Mail Function:**
 - Now before starting to type this send_mail function let’s create our generated password. Once you have turned on your 2-step verification, you can head back to the security navigation page. Under signing-in to Google, you see a tab called App passwords. Now click on this tab. Under “Select App” select the option “Mail” and under “Select device” select the device you are doing this project on. In my case, I would choose the option “Mac”. Then click generate.
