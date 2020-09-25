@@ -17,11 +17,11 @@ Now let’s get this problem solved by writing an easy and short python script, 
 - “Requests” helps us to retrieve data from any website.
 
 ## **Importing Packages:**
-/// python
+``` python
 import requests
 from bs4 import BeautifulSoup
 import smtplib
-///
+```
 - "smtplib" is needed to give us the function to send emails.
 
 ## **Code Setup:**
