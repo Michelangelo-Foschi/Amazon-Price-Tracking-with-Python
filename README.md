@@ -56,6 +56,29 @@ def check_price():
 - Now before starting to type this send_mail function let’s create our generated password. Once you have turned on your 2-step verification, you can head back to the security navigation page. Under signing-in to Google, you see a tab called App passwords. Now click on this tab. Under “Select App” select the option “Mail” and under “Select device” select the device you are doing this project on. In my case, I would choose the option “Mac”. Then click generate.
 Now we have our generated password.
 
+``` python 
+def send_mail():
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.ehlo()
+    server.starttls()
+    server.ehlo()
+
+    server.login('YOUR EMAIL ADDRESS', 'YOUR GENERATED APP PASSSWORD')
+
+    subject = 'Price fell down for your Lego ISS'
+    body = 'Check the amazon link https://www.amazon.ae/LEGO-Ideas-International-Station-21321/dp/B0844WLH35/ref=sr_1_1?dchild=1&keywords=lego+iss&qid=1598777217&sr=8-1'
+
+    msg = f"Subject: {subject}\n\n{body}"
+
+    server.sendmail(
+        'SENDERS EMAIL',
+        'RECEIVERS EMAIL',
+        msg
+    )
+    print('Mail sent')
+    server.quit()
+```
+
 ## **Call Our Function:**
 ``` python
 check_price()
